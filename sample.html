@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>サンプル</title>
+</head>
+<body>
+
+<p>サンプルページです。</p>
+
+<label for="fruit">選択してください</label>
+<select id="fruit">
+<option value="orange">Orange</option>
+<option value="lemon">Lemon</option>
+<option value="strawberry">Strawberry</option>
+</select>
+
+<div>
+<input type="button" value="Check" id="checkButton">
+</div>
+
+<script>
+function butotnClick(){
+  console.log('選択されているのは ' + fruitSelect.value + ' です');
+}
+
+let fruitSelect = document.getElementById('fruit');
+fruitSelect.options[2].selected = true;
+
+let checkButton = document.getElementById('checkButton');
+checkButton.addEventListener('click', butotnClick);
+</script>
+
+</body>
+</html>
