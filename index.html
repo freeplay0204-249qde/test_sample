@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<header>
+<meta charset="UTF-8">
+<title>テスト</title>
+</header>
+  <body>
+    <main>
+    <form action="#" id="form">
+      <p>好きなフルーツは？</p><br>
+
+      <select id="fruitSelect" class="fruit">
+        <option value="" disabled selected>選択してください</option>
+        <option value="lemon">lemon</option>
+        <option value="apple">apple</option>
+        <option value="orrange">orrange</option>
+      </select>
+     <button type="submit">送信</button>
+    </form> 
+  </main>
+
+    <style>
+      .fruit{
+        font-size: 20px;
+        color: blue;
+      }   
+    </style>
+  </body>
+
+   <p id="result"></p>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(event) {
+      event.preventDefault(); // フォーム送信をキャンセル
+      const selectedValue = document.getElementById("fruitSelect").value;
+      if (selectedValue === "") {
+        alert("フルーツを選んでください。");
+        return;
+      }
+      document.getElementById("result").textContent = "好きなフルーツは: " + selectedValue;
+    });
+  </script>
+</html>
